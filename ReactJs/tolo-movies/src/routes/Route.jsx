@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Catalog from '../pages/Catalog';
@@ -8,25 +8,25 @@ import Detail from '../pages/Detail';
 
 const MyRoute = () => {
     return (
-        <Routes>
+        <Switch>
             <Route
                 path='/:category/search/:keyword'
-                element={<Catalog />}
+                component={Catalog}
             />
             <Route
                 path='/:category/:id'
-                element={<Detail />}
+                component={Detail}
             />
             <Route
                 path='/:category'
-                element={<Catalog />}
+                component={Catalog}
             />
             <Route
-                path='/'
+                path="/"
                 exact
-                element={<Home />}
+                component={Home}
             />
-        </Routes>
+        </Switch>
     );
 }
 
