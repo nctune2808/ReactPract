@@ -1,14 +1,14 @@
 import axios from 'axios';
 import queryString from 'query-string';
 
-import configAPI from './config';
+import configApi from './config';
 
 const axiosClient = axios.create({
-    baseURL: configAPI.baseUrl,
+    baseURL: configApi.baseUrl,
     headers: {
         'Content-Type': 'application/json'
     },
-    paramsSerializer: params => queryString.stringify({...params, api_key: configAPI.apiKey})
+    paramsSerializer: params => queryString.stringify({...params, api_key: configApi.apiKey})
 });
 
 axiosClient.interceptors.request.use(async (config) => config);
