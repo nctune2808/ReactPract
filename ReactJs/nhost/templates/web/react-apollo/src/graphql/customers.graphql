@@ -15,3 +15,7 @@ mutation insertCustomer($customer: customers_insert_input!) {
         }
     }
 }
+
+subscription subscribeCustomer {
+
+}
