@@ -1,0 +1,17 @@
+query customers {
+    customers {
+        id
+        created_at
+        name
+    }
+}
+
+mutation insertCustomer($customer: customers_insert_input!) {
+    insert_customer (objects: [$customer]) {
+        returning {
+            id
+            created_at
+            name
+        }
+    }
+}
