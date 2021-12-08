@@ -1,7 +1,7 @@
 overwrite: true
-schema: http://localhost:1337/v1/graphql
+schema: https://ikpptbiuzcthddrdmdlp.nhost.run/v1/graphql/
 headers:
-  x-hasura-admin-secret: 81e433de8d529ce56bf9dfb6317347c5
+  x-hasura-admin-secret: 5cb80b2b040de85213810c81a52756de
 documents:
   - "src/**/*.graphql"
   - "src/**/*.gql"

@@ -7,7 +7,7 @@ import { NhostClient } from "@nhost/nhost-js";
 
 
 const nhost = new NhostClient({
-  backendUrl: "https://backend-ae0fa339.nhost.app",
+  backendUrl: "https://ikpptbiuzcthddrdmdlp.nhost.run",
 });
 
 export { nhost };

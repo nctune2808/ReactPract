@@ -1,2 +1,2 @@
-https://hasura-ae0fa339.nhost.app/console/data/schema/public
-https://console.nhost.io/tolo/nhost-react
+https://ikpptbiuzcthddrdmdlp.nhost.run/console/api/api-explorer
+https://app.beta.nhost.io/default-workspace-uyrmi/reactapp/data

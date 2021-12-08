@@ -1,13 +1,14 @@
-query customers {
+query getCustomers {
     customers {
         id
         created_at
         name
+        is_private
     }
 }
 
 mutation insertCustomer($customer: customers_insert_input!) {
-    insert_customer (objects: [$customer]) {
+    insert_customers (objects: [$customer]) {
         returning {
             id
             created_at
@@ -16,6 +17,3 @@ mutation insertCustomer($customer: customers_insert_input!) {
     }
 }
 
-subscription subscribeCustomer {
-
-}
