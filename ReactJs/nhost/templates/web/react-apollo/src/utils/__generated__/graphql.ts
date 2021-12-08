@@ -3540,6 +3540,11 @@ export type InsertCustomerMutationVariables = Exact<{
 
 export type InsertCustomerMutation = { __typename?: 'mutation_root', insert_customers?: { __typename?: 'customers_mutation_response', returning: Array<{ __typename?: 'customers', id: any, created_at: any, name: string }> } | null | undefined };
 
+export type SubscribeCustomerSubscriptionVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SubscribeCustomerSubscription = { __typename?: 'subscription_root', customers: Array<{ __typename?: 'customers', id: any, created_at: any, name: string, is_private: boolean }> };
+
 
 export const GetCustomersDocument = gql`
     query getCustomers {
@@ -3618,3 +3623,35 @@ export function useInsertCustomerMutation(baseOptions?: Apollo.MutationHookOptio
 export type InsertCustomerMutationHookResult = ReturnType<typeof useInsertCustomerMutation>;
 export type InsertCustomerMutationResult = Apollo.MutationResult<InsertCustomerMutation>;
 export type InsertCustomerMutationOptions = Apollo.BaseMutationOptions<InsertCustomerMutation, InsertCustomerMutationVariables>;
+export const SubscribeCustomerDocument = gql`
+    subscription subscribeCustomer {
+  customers {
+    id
+    created_at
+    name
+    is_private
+  }
+}
+    `;
+
+/**
+ * __useSubscribeCustomerSubscription__
+ *
+ * To run a query within a React component, call `useSubscribeCustomerSubscription` and pass it any options that fit your needs.
+ * When your component renders, `useSubscribeCustomerSubscription` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the subscription, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSubscribeCustomerSubscription({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSubscribeCustomerSubscription(baseOptions?: Apollo.SubscriptionHookOptions<SubscribeCustomerSubscription, SubscribeCustomerSubscriptionVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useSubscription<SubscribeCustomerSubscription, SubscribeCustomerSubscriptionVariables>(SubscribeCustomerDocument, options);
+      }
+export type SubscribeCustomerSubscriptionHookResult = ReturnType<typeof useSubscribeCustomerSubscription>;
+export type SubscribeCustomerSubscriptionResult = Apollo.SubscriptionResult<SubscribeCustomerSubscription>;

@@ -1,8 +1,12 @@
-import { useGetCustomersQuery } from "../utils/__generated__/graphql";
+import 
+{ useSubscribeCustomerSubscription, 
+    useGetCustomersQuery, 
+    useInsertCustomerMutation 
+} from "../utils/__generated__/graphql";
 
 export function Customers() {
 
-    const {data, loading, error} = useGetCustomersQuery();
+    const {data, loading, error} = useSubscribeCustomerSubscription();
 
     console.log({data});
     

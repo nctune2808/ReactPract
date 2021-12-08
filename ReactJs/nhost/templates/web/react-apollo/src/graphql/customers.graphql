@@ -17,3 +17,12 @@ mutation insertCustomer($customer: customers_insert_input!) {
     }
 }
 
+subscription subscribeCustomer {
+    customers {
+        id
+        created_at
+        name
+        is_private
+    }
+}
+

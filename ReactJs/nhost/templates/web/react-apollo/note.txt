@@ -1,2 +1,4 @@
 https://ikpptbiuzcthddrdmdlp.nhost.run/console/api/api-explorer
 https://app.beta.nhost.io/default-workspace-uyrmi/reactapp/data
+
+npm run codegen   
